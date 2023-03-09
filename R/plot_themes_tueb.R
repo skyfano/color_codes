@@ -32,7 +32,7 @@
 
 # - Documentation: ---- 
 
-#' Primary theme for university of tuebinge colours (for ggplot2) 
+#' Primary theme for University of Tuebingen colours (for ggplot2) 
 #' 
 #' \code{theme_tueb_1} provides a basic \bold{colorCodes} theme 
 #' to use in \bold{ggplot2} commands. 
@@ -132,6 +132,19 @@ theme_tueb_1 <- function(col_title = uni_tuebingen_1[[3]], # "grey"
       ))))
   
 } 
+
+library('ggplot2') 
+ggplot(datasets::iris) +
+  geom_jitter(
+    aes(x = Petal.Length, y = Petal.Width, color = Species),
+    size = 3,
+    alpha = 2 / 3
+  ) +
+  labs(tag = "A",
+       title = "Iris petals",
+       caption = "Data from datasets::iris") +
+  theme_tueb_1()
+
 
 
 # theme_tueb_2: Alternative theme for ggplot2: ------ 
