@@ -303,7 +303,8 @@ theme_grau <- function(col_title = grey(0, 1), # OR: "black"
 
 # - Definition: ---- 
 
-theme_tueb_1 <- function(col_title = uni_tuebingen_1[[3]], # "grey"  
+theme_tueb_1 <- function(binary = TRUE, 
+                         col_title = uni_tuebingen_1[[3]], # "grey"  
                          base_size = 11, 
                          base_family = "", 
                          base_line_size = base_size/22, 
@@ -348,7 +349,13 @@ theme_tueb_1 <- function(col_title = uni_tuebingen_1[[3]], # "grey"
         # background:  
         plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
         complete = TRUE), 
-    scale_color_manual(values=usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
+    
+    if (binary==TRUE) {
+      scale_color_manual(values=usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
+    } else {
+      scale_color_gradientn(values=usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
+    }
+    
   )
 } 
 
