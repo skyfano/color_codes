@@ -421,9 +421,9 @@ theme_tueb_2 <- function(col_title = uni_tuebingen_2[[1]], # "blue"
 ) {
   list(
     ggplot2::theme_bw(base_size = base_size, 
-                    base_family = base_family, 
-                    base_line_size = base_line_size, 
-                    base_rect_size = base_rect_size) %+replace% 
+                      base_family = base_family, 
+                      base_line_size = base_line_size, 
+                      base_rect_size = base_rect_size) %+replace% 
       ggplot2::theme(
         title = ggplot2::element_text(color = col_title, face = "bold", 
                                       margin = ggplot2::margin(t = 10, r = 4, b = 4, l = 4, unit = "pt")), 

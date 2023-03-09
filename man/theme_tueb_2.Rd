@@ -5,7 +5,7 @@
 \title{Alternative theme (for ggplot2)}
 \usage{
 theme_tueb_2(
-  col_title = grey(0, 1),
+  col_title = uni_tuebingen_2[[1]],
   base_size = 11,
   base_family = "",
   base_line_size = base_size/22,
@@ -61,7 +61,7 @@ ggplot(datasets::iris) +
 
 }
 \seealso{
-\code{\link{theme_unikn}} for default theme.
+\code{\link{theme_tueb_1}} for default theme.
 
 Other plot functions: 
 \code{\link{slide}()},
