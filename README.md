@@ -176,6 +176,30 @@ ggplot(my_data, aes(x = X, y = Y, fill = Group)) +
 ```
 
 <img src="inst/pix/README-unnamed-chunk-4-1.png" width="600" style="display: block; margin: auto;" />
+\### University of Tuebingen themes
+
+To make the usage of the two different palettes more appealing, I
+created two different themes called `theme_tueb_1` for the primary
+colors and `theme_tueb_2` for the secondary colors. The following plot
+gives an example of a plot created with the theme for the University of
+Tuebingen primary colors.
+
+``` r
+library('ggplot2')  
+
+ggplot(datasets::iris) +
+  geom_jitter(
+    aes(x = Petal.Length, y = Petal.Width, color = Species),
+    size = 3,
+    alpha = 2 / 3
+  ) +
+  labs(tag = "A",
+       title = "Iris petals",
+       caption = "Data from datasets::iris") +
+  theme_tueb_1()
+```
+
+<img src="inst/pix/README-unnamed-chunk-5-1.png" width="600" style="display: block; margin: auto;" />
 
 #### Illustrating color palettes
 
@@ -187,7 +211,7 @@ demopal(usecol(uni_tuebingen_1, n = 3),  # use a modified color palette
         type = "curve", seed = 2)        # reproducible randomness
 ```
 
-<img src="inst/pix/README-unnamed-chunk-5-1.png" width="600" style="display: block; margin: auto;" />
+<img src="inst/pix/README-unnamed-chunk-6-1.png" width="600" style="display: block; margin: auto;" />
 
 ### Additional color palettes
 
@@ -285,7 +309,7 @@ seecol(pal_google,
        main = "Colors of Google")
 ```
 
-<img src="inst/pix/README-unnamed-chunk-6-1.png" width="600" style="display: block; margin: auto;" />
+<img src="inst/pix/README-unnamed-chunk-7-1.png" width="600" style="display: block; margin: auto;" />
 
 ### Finding colors
 
@@ -545,6 +569,6 @@ remain with their original creators:
 
 <!-- Footer: -->
 
-\[File `README.md` updated on 2023-03-08.\]
+\[File `README.md` updated on 2023-03-09.\]
 
 <!-- eof. -->
