@@ -2,7 +2,11 @@
 % Please edit documentation in R/plot_themes_tueb.R
 \name{theme_tueb_1}
 \alias{theme_tueb_1}
+<<<<<<< HEAD
 \title{Primary theme for University of Tuebingen colours (for ggplot2)}
+=======
+\title{Primary theme for university of tuebinge colours (for ggplot2)}
+>>>>>>> theme
 \usage{
 theme_tueb_1(
   col_title = uni_tuebingen_1[[3]],
