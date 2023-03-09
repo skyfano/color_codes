@@ -88,12 +88,13 @@ theme_tueb_1 <- function(col_title = uni_tuebingen_1[[3]], # "grey"
                          base_family = "", 
                          base_line_size = base_size/22, 
                          base_rect_size = base_size/22
-) {ggplot2::theme_bw(base_size = base_size, 
+) {
+  list(
+    ggplot2::theme_bw(base_size = base_size, 
                      base_family = base_family, 
                      base_line_size = base_line_size, 
                      base_rect_size = base_rect_size) %+replace% 
-    ggplot2::theme(#
-      # titles: 
+    ggplot2::theme(
       title = ggplot2::element_text(color = col_title, face = "bold", 
                                     margin = ggplot2::margin(t = 10, r = 4, b = 4, l = 4, unit = "pt")), 
       plot.subtitle = ggplot2::element_text(color = grey(.10, 1), face = "plain", hjust = 0,
@@ -125,25 +126,23 @@ theme_tueb_1 <- function(col_title = uni_tuebingen_1[[3]], # "grey"
       panel.grid.minor = ggplot2::element_blank(), 
       panel.background = ggplot2::element_rect(fill = grey(1, 1), color = NA), # "white" panel background 
       # background:  
-      plot.background = ggplot2::element_rect(fill = "transparent", color = NA), 
-      complete = TRUE, 
-      scale_color_manual(values = usecol(c(
-        uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3]
-      ))))
-  
+      plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
+      complete = FALSE), 
+    scale_color_manual(values=usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
+    )
 } 
 
-library('ggplot2') 
-ggplot(datasets::iris) +
-  geom_jitter(
-    aes(x = Petal.Length, y = Petal.Width, color = Species),
-    size = 3,
-    alpha = 2 / 3
-  ) +
-  labs(tag = "A",
-       title = "Iris petals",
-       caption = "Data from datasets::iris") +
-  theme_tueb_1()
+# library('ggplot2') 
+# ggplot(datasets::iris) +
+#   geom_jitter(
+#     aes(x = Petal.Length, y = Petal.Width, color = Species),
+#     size = 3,
+#     alpha = 2 / 3
+#   ) +
+#   labs(tag = "A",
+#        title = "Iris petals",
+#        caption = "Data from datasets::iris") +
+#   theme_tueb_1()
 
 
 
