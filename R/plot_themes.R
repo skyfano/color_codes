@@ -420,7 +420,7 @@ theme_tueb_1 <- function(binary = TRUE,
 
 # - Definition: ---- 
 
-theme_tueb_2 <- function(binary = TRUE, 
+theme_tueb_2 <- function(#binary = TRUE, 
                          col_title = uni_tuebingen_2[[1]], # "blue"  
                          base_size = 11, 
                          base_family = "", 
