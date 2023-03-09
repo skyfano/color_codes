@@ -420,7 +420,8 @@ theme_tueb_1 <- function(binary = TRUE,
 
 # - Definition: ---- 
 
-theme_tueb_2 <- function(col_title = uni_tuebingen_2[[1]], # "blue"  
+theme_tueb_2 <- function(binary = TRUE, 
+                         col_title = uni_tuebingen_2[[1]], # "blue"  
                          base_size = 11, 
                          base_family = "", 
                          base_line_size = base_size/22, 
@@ -465,10 +466,20 @@ theme_tueb_2 <- function(col_title = uni_tuebingen_2[[1]], # "blue"
         # background:  
         plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
         complete = TRUE), 
-    scale_fill_manual(values=usecol(c(uni_tuebingen_2[1], uni_tuebingen_2[2], uni_tuebingen_2[3],
-                                       uni_tuebingen_2[4], uni_tuebingen_2[5], uni_tuebingen_2[6],
-                                       uni_tuebingen_2[7], uni_tuebingen_2[8], uni_tuebingen_2[9],
-                                       uni_tuebingen_2[10], uni_tuebingen_2[11], uni_tuebingen_2[12])))
+    
+    if (binary==TRUE) {
+      scale_fill_manual(values=usecol(c(uni_tuebingen_2[1], uni_tuebingen_2[2], uni_tuebingen_2[3],
+                                        uni_tuebingen_2[4], uni_tuebingen_2[5], uni_tuebingen_2[6],
+                                        uni_tuebingen_2[7], uni_tuebingen_2[8], uni_tuebingen_2[9],
+                                        uni_tuebingen_2[10], uni_tuebingen_2[11], uni_tuebingen_2[12])))
+    } else {
+      scale_color_gradientn(colors = usecol(c(uni_tuebingen_2[1], uni_tuebingen_2[2], uni_tuebingen_2[3],
+                                              uni_tuebingen_2[4], uni_tuebingen_2[5], uni_tuebingen_2[6],
+                                              uni_tuebingen_2[7], uni_tuebingen_2[8], uni_tuebingen_2[9],
+                                              uni_tuebingen_2[10], uni_tuebingen_2[11], uni_tuebingen_2[12])))
+    }
+    
+    
   )
   
 } # theme_tueb_2().
