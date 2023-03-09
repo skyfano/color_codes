@@ -418,46 +418,47 @@ theme_tueb_2 <- function(col_title = grey(0, 1), # OR: "black"
                          base_family = "", 
                          base_line_size = base_size/22, 
                          base_rect_size = base_size/22
-) {list(
-  ggplot2::theme_bw(base_size = base_size, 
+) {
+  list(
+    ggplot2::theme_bw(base_size = base_size, 
                     base_family = base_family, 
                     base_line_size = base_line_size, 
                     base_rect_size = base_rect_size) %+replace% 
-    ggplot2::theme(
-      title = ggplot2::element_text(color = col_title, face = "bold", 
-                                    margin = ggplot2::margin(t = 10, r = 4, b = 4, l = 4, unit = "pt")), 
-      plot.subtitle = ggplot2::element_text(color = grey(.10, 1), face = "plain", hjust = 0,
-                                            margin = ggplot2::margin(t = 2, r = 4, b = 8, l = 4, unit = "pt")),  
-      plot.caption = ggplot2::element_text(color =  grey(.20, 1), face = "plain", size = ggplot2::rel(.80), hjust = 1), 
-      # axes:
-      axis.line =  ggplot2::element_line(color = "black", size = ggplot2::rel(1)), 
-      axis.ticks = ggplot2::element_line(color = "black", size = ggplot2::rel(.90)), 
-      axis.title = ggplot2::element_text(color = grey(.10, 1)), 
-      axis.text =  ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)), 
-      # legend: 
-      legend.title = ggplot2::element_text(color = grey(.10, 1)), 
-      legend.text = ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)), 
-      legend.background = ggplot2::element_blank(), 
-      legend.key = ggplot2::element_blank(), 
-      # strip: 
-      # strip.background = ggplot2::element_rect(fill = pal_seeblau[[1]], color = pal_seeblau[[5]], size = ggplot2::rel(5/3)), 
-      strip.background = ggplot2::element_rect(fill = grey(.95, 1), color = grey(.05, 1),  # light grey strip background 
-                                               size = ggplot2::rel(.90)), 
-      strip.text = ggplot2::element_text(color = grey(0, 1), size = ggplot2::rel(1.0), 
-                                         margin = ggplot2::margin(t = 4, r = 4, b = 4, l = 4, unit = "pt")), 
-      # panel: 
-      # panel.border = ggplot2::element_blank(), 
-      panel.border = ggplot2::element_rect(fill = "transparent", color = grey(.05, 1), 
-                                           linetype = "solid", size = ggplot2::rel(.80)), 
-      # panel.grid = ggplot2::element_blank(), 
-      panel.grid.major = ggplot2::element_line(color = grey(.75, 1), linetype = "solid", size = ggplot2::rel(.50)), 
-      # panel.grid.minor = ggplot2::element_line(color = grey(.75, 1), linetype = "solid", size = ggplot2::rel(.40)), # "dotted"  
-      panel.grid.minor = ggplot2::element_blank(), 
-      panel.background = ggplot2::element_rect(fill = grey(1, 1), color = NA), # "white" panel background 
-      # background:  
-      plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
-      complete = TRUE), 
-  scale_color_manual(values=usecol(c(uni_tuebingen_2[1], uni_tuebingen_2[2], uni_tuebingen_2[3], uni_tuebingen_2[4])))
-)
+      ggplot2::theme(
+        title = ggplot2::element_text(color = col_title, face = "bold", 
+                                      margin = ggplot2::margin(t = 10, r = 4, b = 4, l = 4, unit = "pt")), 
+        plot.subtitle = ggplot2::element_text(color = grey(.10, 1), face = "plain", hjust = 0,
+                                              margin = ggplot2::margin(t = 2, r = 4, b = 8, l = 4, unit = "pt")),  
+        plot.caption = ggplot2::element_text(color =  grey(.20, 1), face = "plain", size = ggplot2::rel(.80), hjust = 1), 
+        # axes:
+        axis.line =  ggplot2::element_line(color = "black", size = ggplot2::rel(1)), 
+        axis.ticks = ggplot2::element_line(color = "black", size = ggplot2::rel(.90)), 
+        axis.title = ggplot2::element_text(color = grey(.10, 1)), 
+        axis.text =  ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)), 
+        # legend: 
+        legend.title = ggplot2::element_text(color = grey(.10, 1)), 
+        legend.text = ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)), 
+        legend.background = ggplot2::element_blank(), 
+        legend.key = ggplot2::element_blank(), 
+        # strip: 
+        # strip.background = ggplot2::element_rect(fill = pal_seeblau[[1]], color = pal_seeblau[[5]], size = ggplot2::rel(5/3)), 
+        strip.background = ggplot2::element_rect(fill = grey(.95, 1), color = grey(.05, 1),  # light grey strip background 
+                                                 size = ggplot2::rel(.90)), 
+        strip.text = ggplot2::element_text(color = grey(0, 1), size = ggplot2::rel(1.0), 
+                                           margin = ggplot2::margin(t = 4, r = 4, b = 4, l = 4, unit = "pt")), 
+        # panel: 
+        # panel.border = ggplot2::element_blank(), 
+        panel.border = ggplot2::element_rect(fill = "transparent", color = grey(.05, 1), 
+                                             linetype = "solid", size = ggplot2::rel(.80)), 
+        # panel.grid = ggplot2::element_blank(), 
+        panel.grid.major = ggplot2::element_line(color = grey(.75, 1), linetype = "solid", size = ggplot2::rel(.50)), 
+        # panel.grid.minor = ggplot2::element_line(color = grey(.75, 1), linetype = "solid", size = ggplot2::rel(.40)), # "dotted"  
+        panel.grid.minor = ggplot2::element_blank(), 
+        panel.background = ggplot2::element_rect(fill = grey(1, 1), color = NA), # "white" panel background 
+        # background:  
+        plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
+        complete = TRUE), 
+    scale_color_manual(values=usecol(c(uni_tuebingen_2[1], uni_tuebingen_2[2], uni_tuebingen_2[3], uni_tuebingen_2[4])))
+  )
   
 } # theme_tueb_2().
