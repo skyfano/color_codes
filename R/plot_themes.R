@@ -353,7 +353,7 @@ theme_tueb_1 <- function(binary = TRUE,
     if (binary==TRUE) {
       scale_color_manual(values=usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
     } else {
-      scale_color_gradientn(values=usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
+      scale_color_gradientn(colors = =usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
     }
     
   )
