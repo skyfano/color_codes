@@ -405,7 +405,7 @@ theme_tueb_1 <- function(col_title = uni_tuebingen_1[[3]], # "grey"
 #' @family plot functions
 #' 
 #' @seealso 
-#' \code{\link{theme_unikn}} for default theme. 
+#' \code{\link{theme_tueb_1}} for default theme. 
 #' 
 #' @import ggplot2 
 #'                          
@@ -413,7 +413,7 @@ theme_tueb_1 <- function(col_title = uni_tuebingen_1[[3]], # "grey"
 
 # - Definition: ---- 
 
-theme_tueb_2 <- function(col_title = grey(0, 1), # OR: "black" 
+theme_tueb_2 <- function(col_title = uni_tuebingen_2[[1]], # "blue"  
                          base_size = 11, 
                          base_family = "", 
                          base_line_size = base_size/22, 
