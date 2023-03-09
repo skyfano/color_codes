@@ -347,7 +347,7 @@ theme_tueb_1 <- function(col_title = uni_tuebingen_1[[3]], # "grey"
         panel.background = ggplot2::element_rect(fill = grey(1, 1), color = NA), # "white" panel background 
         # background:  
         plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
-        complete = FALSE), 
+        complete = TRUE), 
     scale_color_manual(values=usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
   )
 } 
