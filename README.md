@@ -176,7 +176,8 @@ ggplot(my_data, aes(x = X, y = Y, fill = Group)) +
 ```
 
 <img src="inst/pix/README-unnamed-chunk-4-1.png" width="600" style="display: block; margin: auto;" />
-\### University of Tuebingen themes
+
+### University of Tuebingen themes
 
 To make the usage of the two different palettes more appealing, I
 created two different themes called `theme_tueb_1` for the primary

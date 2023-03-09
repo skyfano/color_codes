@@ -197,6 +197,7 @@ ggplot(my_data, aes(x = X, y = Y, fill = Group)) +
   theme_void() +
   theme(legend.position = "none")
 ```
+
 ### University of Tuebingen themes
 
 To make the usage of the two different palettes more appealing, I created two different 
