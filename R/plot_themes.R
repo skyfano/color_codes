@@ -361,6 +361,10 @@ theme_grau <- function(col_title = grey(0, 1),
 #' The theme is lightweight and no-nonsense, but somewhat
 #' opinionated (e.g., in using mostly grey scales to
 #' allow emphasizing data points with color accents).
+#' 
+#' @param binary A boolean.
+#'   * `TRUE` (the default): discrete case.
+#'   * `FALSE`: continuous case.
 #'
 #' @param col_title Color of title (text) elements (optional, numeric).
 #' Default: \code{col_title = uni_tuebingen_1[[1]]}.
@@ -527,6 +531,10 @@ theme_tueb_1 <- function(binary = TRUE,
 #'
 #' This theme works well for dark colors and bright color accents,
 #' but is of limited use with transparent colors.
+#' 
+#' @param binary A boolean.
+#'   * `TRUE` (the default): discrete case.
+#'   * `FALSE`: continuous case.
 #'
 #' @param col_title Color of title (text) elements (optional, numeric).
 #' Default: \code{col_title = grey(0, 1)} (i.e., "black").
@@ -589,7 +597,7 @@ theme_tueb_1 <- function(binary = TRUE,
 
 # - Definition: ----
 
-theme_tueb_2 <- function(binary = FALSE,
+theme_tueb_2 <- function(binary = TRUE,
                          col_title = uni_tuebingen_2[[1]],
                          base_size = 11,
                          base_family = "",
