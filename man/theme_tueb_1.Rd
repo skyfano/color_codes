@@ -14,6 +14,10 @@ theme_tueb_1(
 )
 }
 \arguments{
+\item{binary}{A boolean.
+* `TRUE` (the default): discrete case.
+* `FALSE`: continuous case.}
+
 \item{col_title}{Color of title (text) elements (optional, numeric).
 Default: \code{col_title = uni_tuebingen_1[[1]]}.}
 

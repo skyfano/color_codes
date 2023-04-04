@@ -5,7 +5,7 @@
 \title{Alternative theme (for ggplot2)}
 \usage{
 theme_tueb_2(
-  binary = FALSE,
+  binary = TRUE,
   col_title = uni_tuebingen_2[[1]],
   base_size = 11,
   base_family = "",
@@ -14,6 +14,10 @@ theme_tueb_2(
 )
 }
 \arguments{
+\item{binary}{A boolean.
+* `TRUE` (the default): discrete case.
+* `FALSE`: continuous case.}
+
 \item{col_title}{Color of title (text) elements (optional, numeric).
 Default: \code{col_title = grey(0, 1)} (i.e., "black").}
 
