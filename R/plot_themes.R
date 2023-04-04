@@ -581,7 +581,7 @@ theme_tueb_1 <- function(discrete = TRUE,
 #'
 #'     ggplot(my_data, aes(x = X, y = Y, fill = Group)) +
 #'         geom_area() +
-#'         theme_tueb_2(discrete= TRUE) +
+#'         theme_tueb_2(discrete = TRUE) +
 #'         theme(legend.position = "none")
 #' }
 #'
