@@ -221,7 +221,7 @@ ggplot(datasets::iris) +
   labs(tag = "A",
        title = "Iris petals",
        caption = "Data from datasets::iris") +
-  theme_tueb_1()
+  theme_tueb_1() # discrete=TRUE
 ```
 
 

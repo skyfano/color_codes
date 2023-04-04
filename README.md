@@ -201,7 +201,7 @@ ggplot(datasets::iris) +
   labs(tag = "A",
        title = "Iris petals",
        caption = "Data from datasets::iris") +
-  theme_tueb_1()
+  theme_tueb_1() # discrete=TRUE
 ```
 
 <img src="inst/pix/README-unnamed-chunk-5-1.png" width="600" style="display: block; margin: auto;" />
