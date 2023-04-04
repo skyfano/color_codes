@@ -551,7 +551,7 @@ theme_tueb_1 <- function(binary = TRUE,
 #'
 #'   library('ggplot2')  # theme_tueb_1 requires ggplot2
 #'
-#'     n <- 50
+#'     n <- 12
 #'     groups <- 1:n
 #'     df <- data.frame()
 #'     set.seed(3)
