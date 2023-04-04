@@ -5,7 +5,7 @@
 \title{Alternative theme (for ggplot2)}
 \usage{
 theme_tueb_2(
-  binary = TRUE,
+  discrete = TRUE,
   col_title = uni_tuebingen_2[[1]],
   base_size = 11,
   base_family = "",
@@ -14,7 +14,7 @@ theme_tueb_2(
 )
 }
 \arguments{
-\item{binary}{A boolean.
+\item{discrete}{A boolean.
 * `TRUE` (the default): discrete case.
 * `FALSE`: continuous case.}
 

@@ -5,7 +5,7 @@
 \title{Primary theme for University of Tuebingen colours (for ggplot2)}
 \usage{
 theme_tueb_1(
-  binary = TRUE,
+  discrete = TRUE,
   col_title = uni_tuebingen_1[[3]],
   base_size = 11,
   base_family = "",
@@ -14,7 +14,7 @@ theme_tueb_1(
 )
 }
 \arguments{
-\item{binary}{A boolean.
+\item{discrete}{A boolean.
 * `TRUE` (the default): discrete case.
 * `FALSE`: continuous case.}
 

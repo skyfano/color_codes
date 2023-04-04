@@ -362,7 +362,7 @@ theme_grau <- function(col_title = grey(0, 1),
 #' opinionated (e.g., in using mostly grey scales to
 #' allow emphasizing data points with color accents).
 #' 
-#' @param binary A boolean.
+#' @param discrete A boolean.
 #'   * `TRUE` (the default): discrete case.
 #'   * `FALSE`: continuous case.
 #'
@@ -408,7 +408,7 @@ theme_grau <- function(col_title = grey(0, 1),
 
 # - Definition: ----
 
-theme_tueb_1 <- function(binary = TRUE,
+theme_tueb_1 <- function(discrete = TRUE,
                          col_title = uni_tuebingen_1[[3]],
                          # "grey"
                          base_size = 11,
@@ -504,7 +504,7 @@ theme_tueb_1 <- function(binary = TRUE,
         complete = TRUE
       ),
     
-    if (binary == TRUE) {
+    if (discrete == TRUE) {
       scale_color_manual(values = usecol(c(
         uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3]
       )))
@@ -532,7 +532,7 @@ theme_tueb_1 <- function(binary = TRUE,
 #' This theme works well for dark colors and bright color accents,
 #' but is of limited use with transparent colors.
 #' 
-#' @param binary A boolean.
+#' @param discrete A boolean.
 #'   * `TRUE` (the default): discrete case.
 #'   * `FALSE`: continuous case.
 #'
@@ -597,7 +597,7 @@ theme_tueb_1 <- function(binary = TRUE,
 
 # - Definition: ----
 
-theme_tueb_2 <- function(binary = TRUE,
+theme_tueb_2 <- function(discrete = TRUE,
                          col_title = uni_tuebingen_2[[1]],
                          base_size = 11,
                          base_family = "",
@@ -691,7 +691,7 @@ theme_tueb_2 <- function(binary = TRUE,
         plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
         complete = TRUE
       ),
-    if (binary == TRUE) {
+    if (discrete == TRUE) {
       scale_fill_manual(values = usecol(
         c(
           uni_tuebingen_2[1],
