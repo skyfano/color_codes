@@ -544,16 +544,48 @@ theme_tueb_1 <- function(binary = TRUE,
 #' @param base_rect_size Base rectangle size (optional, numeric).
 #' Default: \code{base_rect_size = base_size/22}.
 #'
+#' @examples
 #'
+#' \donttest{
+#'   # Plotting iris dataset (using ggplot2, theme_tueb_1, and unikn colors):
+#'
+#'   library('ggplot2')  # theme_tueb_1 requires ggplot2
+#'
+#'     n <- 50
+#'     groups <- 1:n
+#'     df <- data.frame()
+#'     set.seed(3)
+#'
+#'     for (i in seq(1:30)){
+#'         data = data.frame(matrix(0, n, 3))
+#'         data[, 1] <- i
+#'         data[, 2] <- sample(groups, nrow(data))
+#'         data[, 3] <- prop.table(sample(c(rep(0, 100), c(1:n)), nrow(data)))
+#'         df = rbind(df, data)}
+#'
+#'     names(df) <- c("X","Group","Y")
+#'     df$Group <- as.factor(df$Group)
+#'
+#'     df <- df[c(2, 1, 3)]
+#'     df <- df[order(df$X, df$Group) , ]
+#'     rownames(df) <- NULL
+#'     my_data <- df
+#'
+#'     ggplot(my_data, aes(x = X, y = Y, fill = Group)) +
+#'         geom_area() +
+#'         theme_tueb_2() +
+#'         theme(legend.position = "none")
+#' }
 #'
 #' @family plot functions
 #'
 #' @seealso
-#' \code{\link{theme_tueb_1}} for default theme.
+#' \code{\link{theme_tueb_1}} for an alternative theme.
 #'
 #' @import ggplot2
 #'
 #' @export
+
 
 # - Definition: ----
 
@@ -750,10 +782,10 @@ theme_tueb_2 <- function(binary = TRUE,
 # - Definition: ----
 
 theme_tueb_1_disc <- function(col_title = uni_tuebingen_1[[3]],
-                         base_size = 11,
-                         base_family = "",
-                         base_line_size = base_size / 22,
-                         base_rect_size = base_size / 22) {
+                              base_size = 11,
+                              base_family = "",
+                              base_line_size = base_size / 22,
+                              base_rect_size = base_size / 22) {
   list(
     ggplot2::theme_bw(
       base_size = base_size,
@@ -841,7 +873,10 @@ theme_tueb_1_disc <- function(col_title = uni_tuebingen_1[[3]],
         # background:
         plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
         complete = TRUE
-      ),scale_color_manual(values = usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
+      ),
+    scale_color_manual(values = usecol(
+      c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])
+    ))
   )
 }
 
@@ -979,7 +1014,10 @@ theme_tueb_1_cont <- function(col_title = uni_tuebingen_1[[3]],
         # background:
         plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
         complete = TRUE
-      ), scale_color_gradientn(colors =usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
+      ),
+    scale_color_gradientn(colors = usecol(
+      c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])
+    ))
   )
 }
 
@@ -1133,22 +1171,23 @@ theme_tueb_2_disc <- function(col_title = uni_tuebingen_1[[3]],
         # background:
         plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
         complete = TRUE
-      ), scale_fill_manual(values = usecol(
-            c(
-              uni_tuebingen_2[1],
-              uni_tuebingen_2[2],
-              uni_tuebingen_2[3],
-              uni_tuebingen_2[4],
-              uni_tuebingen_2[5],
-              uni_tuebingen_2[6],
-              uni_tuebingen_2[7],
-              uni_tuebingen_2[8],
-              uni_tuebingen_2[9],
-              uni_tuebingen_2[10],
-              uni_tuebingen_2[11],
-              uni_tuebingen_2[12]
-            )
-          ))
+      ),
+    scale_fill_manual(values = usecol(
+      c(
+        uni_tuebingen_2[1],
+        uni_tuebingen_2[2],
+        uni_tuebingen_2[3],
+        uni_tuebingen_2[4],
+        uni_tuebingen_2[5],
+        uni_tuebingen_2[6],
+        uni_tuebingen_2[7],
+        uni_tuebingen_2[8],
+        uni_tuebingen_2[9],
+        uni_tuebingen_2[10],
+        uni_tuebingen_2[11],
+        uni_tuebingen_2[12]
+      )
+    ))
   )
 }
 
@@ -1289,21 +1328,22 @@ theme_tueb_2_cont <- function(col_title = uni_tuebingen_1[[3]],
         # background:
         plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
         complete = TRUE
-      ), scale_colour_gradientn(colors = usecol(
-        c(
-          uni_tuebingen_2[1],
-          uni_tuebingen_2[2],
-          uni_tuebingen_2[3],
-          uni_tuebingen_2[4],
-          uni_tuebingen_2[5],
-          uni_tuebingen_2[6],
-          uni_tuebingen_2[7],
-          uni_tuebingen_2[8],
-          uni_tuebingen_2[9],
-          uni_tuebingen_2[10],
-          uni_tuebingen_2[11],
-          uni_tuebingen_2[12]
-        )
-      ))
+      ),
+    scale_colour_gradientn(colors = usecol(
+      c(
+        uni_tuebingen_2[1],
+        uni_tuebingen_2[2],
+        uni_tuebingen_2[3],
+        uni_tuebingen_2[4],
+        uni_tuebingen_2[5],
+        uni_tuebingen_2[6],
+        uni_tuebingen_2[7],
+        uni_tuebingen_2[8],
+        uni_tuebingen_2[9],
+        uni_tuebingen_2[10],
+        uni_tuebingen_2[11],
+        uni_tuebingen_2[12]
+      )
+    ))
   )
 }

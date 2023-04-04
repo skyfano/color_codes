@@ -41,8 +41,42 @@ panel backgrounds in "grau" (specifically, pal_seeggrau[[1]]).
 This theme works well for dark colors and bright color accents,
 but is of limited use with transparent colors.
 }
+\examples{
+
+\donttest{
+  # Plotting iris dataset (using ggplot2, theme_tueb_1, and unikn colors):
+
+  library('ggplot2')  # theme_tueb_1 requires ggplot2
+
+    n <- 50
+    groups <- 1:n
+    df <- data.frame()
+    set.seed(3)
+
+    for (i in seq(1:30)){
+        data = data.frame(matrix(0, n, 3))
+        data[, 1] <- i
+        data[, 2] <- sample(groups, nrow(data))
+        data[, 3] <- prop.table(sample(c(rep(0, 100), c(1:n)), nrow(data)))
+        df = rbind(df, data)}
+
+    names(df) <- c("X","Group","Y")
+    df$Group <- as.factor(df$Group)
+
+    df <- df[c(2, 1, 3)]
+    df <- df[order(df$X, df$Group) , ]
+    rownames(df) <- NULL
+    my_data <- df
+
+    ggplot(my_data, aes(x = X, y = Y, fill = Group)) +
+        geom_area() +
+        theme_tueb_2() +
+        theme(legend.position = "none")
+}
+
+}
 \seealso{
-\code{\link{theme_tueb_1}} for default theme.
+\code{\link{theme_tueb_1}} for an alternative theme.
 
 Other plot functions: 
 \code{\link{slide}()},
