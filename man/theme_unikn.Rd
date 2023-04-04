@@ -14,44 +14,44 @@ theme_unikn(
 }
 \arguments{
 \item{col_title}{Color of title (text) elements (optional, numeric).
-Default: \code{col_title = pal_seeblau[[4]]}. 
-Consider using \code{col_title = "black"} when data uses 
+Default: \code{col_title = pal_seeblau[[4]]}.
+Consider using \code{col_title = "black"} when data uses
 \code{Seeblau} colors.}
 
-\item{base_size}{Base font size (optional, numeric). 
+\item{base_size}{Base font size (optional, numeric).
 Default: \code{base_size = 11}.}
 
-\item{base_family}{Base font family (optional, character). 
-Default: \code{base_family = ""}. 
+\item{base_family}{Base font family (optional, character).
+Default: \code{base_family = ""}.
 Options include \code{"mono"}, \code{"sans"} (default), and "serif".}
 
-\item{base_line_size}{Base line size (optional, numeric). 
+\item{base_line_size}{Base line size (optional, numeric).
 Default: \code{base_line_size = base_size/22}.}
 
-\item{base_rect_size}{Base rectangle size (optional, numeric). 
+\item{base_rect_size}{Base rectangle size (optional, numeric).
 Default: \code{base_rect_size = base_size/22}.}
 }
 \description{
-\code{theme_unikn} provides a basic \bold{unikn} theme 
+\code{theme_unikn} provides a basic \bold{unikn} theme
 to use in \bold{ggplot2} commands.
 }
 \details{
-The theme is lightweight and no-nonsense, but somewhat 
-opinionated (e.g., in using mostly grey scales to 
+The theme is lightweight and no-nonsense, but somewhat
+opinionated (e.g., in using mostly grey scales to
 allow emphasizing data points with color accents).
 }
 \examples{
 
 \donttest{
   # Plotting iris dataset (using ggplot2, theme_unikn, and unikn colors):
-  
-  library('ggplot2')  # theme_unikn requires ggplot2 
-  
+
+  library('ggplot2')  # theme_unikn requires ggplot2
+
   ggplot(datasets::iris) +
     geom_jitter(aes(x = Petal.Length, y = Petal.Width, color = Species), size = 3, alpha = 2/3) +
     scale_color_manual(values = usecol(pal = c(Pinky, Seeblau, Seegruen))) +
     labs(tag = "A", title = "Iris petals",
-         caption = "Data from datasets::iris") + 
+         caption = "Data from datasets::iris") +
     theme_unikn()
 }
 
@@ -62,7 +62,11 @@ allow emphasizing data points with color accents).
 Other plot functions: 
 \code{\link{slide}()},
 \code{\link{theme_grau}()},
+\code{\link{theme_tueb_1_cont}()},
+\code{\link{theme_tueb_1_disc}()},
 \code{\link{theme_tueb_1}()},
+\code{\link{theme_tueb_2_cont}()},
+\code{\link{theme_tueb_2_disc}()},
 \code{\link{theme_tueb_2}()},
 \code{\link{xbox}()}
 }

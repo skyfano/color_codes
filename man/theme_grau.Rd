@@ -14,48 +14,48 @@ theme_grau(
 }
 \arguments{
 \item{col_title}{Color of title (text) elements (optional, numeric).
-Default: \code{col_title = grey(0, 1)} (i.e., "black").  
+Default: \code{col_title = grey(0, 1)} (i.e., "black").
 Consider using \code{col_title = unikn::pal_seeblau[[4]]}.}
 
-\item{base_size}{Base font size (optional, numeric). 
+\item{base_size}{Base font size (optional, numeric).
 Default: \code{base_size = 11}.}
 
-\item{base_family}{Base font family (optional, character). 
-Default: \code{base_family = ""}. 
+\item{base_family}{Base font family (optional, character).
+Default: \code{base_family = ""}.
 Options include \code{"mono"}, \code{"sans"} (default), and "serif".}
 
-\item{base_line_size}{Base line size (optional, numeric). 
+\item{base_line_size}{Base line size (optional, numeric).
 Default: \code{base_line_size = base_size/22}.}
 
-\item{base_rect_size}{Base rectangle size (optional, numeric). 
+\item{base_rect_size}{Base rectangle size (optional, numeric).
 Default: \code{base_rect_size = base_size/22}.}
 }
 \description{
-\code{theme_grau} provides an alternative \bold{unikn} theme 
+\code{theme_grau} provides an alternative \bold{unikn} theme
 to use in \bold{ggplot2} commands.
 }
 \details{
-\code{theme_grau} is no-nonsense, but fills  
-panel backgrounds in "grau" (specifically, pal_seeggrau[[1]]). 
+\code{theme_grau} is no-nonsense, but fills
+panel backgrounds in "grau" (specifically, pal_seeggrau[[1]]).
 
-This theme works well for dark colors and bright color accents, 
+This theme works well for dark colors and bright color accents,
 but is of limited use with transparent colors.
 }
 \examples{
 
 \donttest{
 # Plotting iris dataset (using ggplot2, theme_grau, and unikn colors):
-  
-library('ggplot2')  # theme_unikn requires ggplot2 
-   
+
+library('ggplot2')  # theme_unikn requires ggplot2
+
 ggplot(datasets::iris) +
   geom_jitter(aes(x = Sepal.Length, y = Sepal.Width, color = Species), size = 3, alpha = 2/3) +
   facet_wrap(~Species) +
   scale_color_manual(values = usecol(pal = c(Pinky, Seeblau, Seegruen))) +
   labs(tag = "B",
        title = "Iris sepals",
-       caption = "Data from datasets::iris") + 
-  coord_fixed(ratio = 3/2) + 
+       caption = "Data from datasets::iris") +
+  coord_fixed(ratio = 3/2) +
   theme_grau()
 
 }
@@ -66,7 +66,11 @@ ggplot(datasets::iris) +
 
 Other plot functions: 
 \code{\link{slide}()},
+\code{\link{theme_tueb_1_cont}()},
+\code{\link{theme_tueb_1_disc}()},
 \code{\link{theme_tueb_1}()},
+\code{\link{theme_tueb_2_cont}()},
+\code{\link{theme_tueb_2_disc}()},
 \code{\link{theme_tueb_2}()},
 \code{\link{theme_unikn}()},
 \code{\link{xbox}()}

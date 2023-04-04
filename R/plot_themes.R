@@ -544,24 +544,7 @@ theme_tueb_1 <- function(binary = TRUE,
 #' @param base_rect_size Base rectangle size (optional, numeric).
 #' Default: \code{base_rect_size = base_size/22}.
 #'
-#' @examples
 #'
-#' \donttest{
-#' # Plotting iris dataset (using ggplot2, theme_tueb_2, and unikn colors):
-#'
-#' library('ggplot2')  # theme_tueb_2 requires ggplot2
-#'
-#' ggplot(datasets::iris) +
-#'   geom_jitter(aes(x = Sepal.Length, y = Sepal.Width, color = Species), size = 3, alpha = 2/3) +
-#'   facet_wrap(~Species) +
-#'   scale_color_manual(values = usecol(pal = c(Pinky, Seeblau, Seegruen))) +
-#'   labs(tag = "B",
-#'        title = "Iris sepals",
-#'        caption = "Data from datasets::iris") +
-#'   coord_fixed(ratio = 3/2) +
-#'   theme_tueb_2()
-#'
-#' }
 #'
 #' @family plot functions
 #'
@@ -669,52 +652,658 @@ theme_tueb_2 <- function(binary = TRUE,
         complete = TRUE
       ),
     if (binary == TRUE) {
-      scale_color_manual(values = usecol(c(
-        uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3]
-      )))
+      scale_fill_manual(values = usecol(
+        c(
+          uni_tuebingen_2[1],
+          uni_tuebingen_2[2],
+          uni_tuebingen_2[3],
+          uni_tuebingen_2[4],
+          uni_tuebingen_2[5],
+          uni_tuebingen_2[6],
+          uni_tuebingen_2[7],
+          uni_tuebingen_2[8],
+          uni_tuebingen_2[9],
+          uni_tuebingen_2[10],
+          uni_tuebingen_2[11],
+          uni_tuebingen_2[12]
+        )
+      ))
     } else {
-      scale_color_gradientn(colors = usecol(c(
-        uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3]
-      )))
+      scale_color_gradientn(colors = usecol(
+        c(
+          uni_tuebingen_2[1],
+          uni_tuebingen_2[2],
+          uni_tuebingen_2[3],
+          uni_tuebingen_2[4],
+          uni_tuebingen_2[5],
+          uni_tuebingen_2[6],
+          uni_tuebingen_2[7],
+          uni_tuebingen_2[8],
+          uni_tuebingen_2[9],
+          uni_tuebingen_2[10],
+          uni_tuebingen_2[11],
+          uni_tuebingen_2[12]
+        )
+      ))
     }
-    
-    # if (binary == TRUE) {
-    #   scale_fill_manual(values = usecol(
-    #     c(
-    #       uni_tuebingen_2[1],
-    #       uni_tuebingen_2[2],
-    #       uni_tuebingen_2[3],
-    #       uni_tuebingen_2[4],
-    #       uni_tuebingen_2[5],
-    #       uni_tuebingen_2[6],
-    #       uni_tuebingen_2[7],
-    #       uni_tuebingen_2[8],
-    #       uni_tuebingen_2[9],
-    #       uni_tuebingen_2[10],
-    #       uni_tuebingen_2[11],
-    #       uni_tuebingen_2[12]
-    #     )
-    #   ))
-    # } else {
-    #   scale_color_gradientn(colors = usecol(
-    #     c(
-    #       uni_tuebingen_2[1],
-    #       uni_tuebingen_2[2],
-    #       uni_tuebingen_2[3],
-    #       uni_tuebingen_2[4],
-    #       uni_tuebingen_2[5],
-    #       uni_tuebingen_2[6],
-    #       uni_tuebingen_2[7],
-    #       uni_tuebingen_2[8],
-    #       uni_tuebingen_2[9],
-    #       uni_tuebingen_2[10],
-    #       uni_tuebingen_2[11],
-    #       uni_tuebingen_2[12]
-    #     )
-    #   ))
-    # }
     
     
   )
   
 } # theme_tueb_2().
+
+###################################################################################################
+
+# theme_tueb_1_disc: Discrete version for plotting: ------
+
+# - Documentation: ----
+
+#' Primary theme for University of Tuebingen colours (for ggplot2)
+#'
+#' \code{theme_tueb_1_disc} provides a basic \bold{colorCodes} theme
+#' to use in \bold{ggplot2} commands.
+#'
+#' The theme is lightweight and no-nonsense, but somewhat
+#' opinionated (e.g., in using mostly grey scales to
+#' allow emphasizing data points with color accents).
+#'
+#' @param col_title Color of title (text) elements (optional, numeric).
+#' Default: \code{col_title = uni_tuebingen_1[[1]]}.
+#'
+#' @param base_size Base font size (optional, numeric).
+#' Default: \code{base_size = 11}.
+#'
+#' @param base_family Base font family (optional, character).
+#' Default: \code{base_family = ""}.
+#' Options include \code{"mono"}, \code{"sans"} (default), and "serif".
+#'
+#' @param base_line_size Base line size (optional, numeric).
+#' Default: \code{base_line_size = base_size/22}.
+#'
+#' @param base_rect_size Base rectangle size (optional, numeric).
+#' Default: \code{base_rect_size = base_size/22}.
+#'
+#' @examples
+#'
+#' \donttest{
+#'   # Plotting iris dataset (using ggplot2, theme_tueb_1, and unikn colors):
+#'
+#'   library('ggplot2')  # theme_tueb_1 requires ggplot2
+#'
+#'   ggplot(datasets::iris) +
+#'     geom_jitter(aes(x = Petal.Length, y = Petal.Width, color = Species), size = 3, alpha = 2/3) +
+#'     scale_color_manual(values = usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3]))) +
+#'     labs(tag = "A", title = "Iris petals",
+#'          caption = "Data from datasets::iris") +
+#'     theme_tueb_1_disc()
+#' }
+#'
+#' @family plot functions
+#'
+#' @seealso
+#' \code{\link{theme_tueb_1_cont}} for an alternative theme.
+#'
+#' @import ggplot2
+#'
+#' @export
+
+# - Definition: ----
+
+theme_tueb_1_disc <- function(col_title = uni_tuebingen_1[[3]],
+                         base_size = 11,
+                         base_family = "",
+                         base_line_size = base_size / 22,
+                         base_rect_size = base_size / 22) {
+  list(
+    ggplot2::theme_bw(
+      base_size = base_size,
+      base_family = base_family,
+      base_line_size = base_line_size,
+      base_rect_size = base_rect_size
+    ) %+replace%
+      ggplot2::theme(
+        title = ggplot2::element_text(
+          color = col_title,
+          face = "bold",
+          margin = ggplot2::margin(
+            t = 10,
+            r = 4,
+            b = 4,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        plot.subtitle = ggplot2::element_text(
+          color = grey(.10, 1),
+          face = "plain",
+          hjust = 0,
+          margin = ggplot2::margin(
+            t = 2,
+            r = 4,
+            b = 8,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        plot.caption = ggplot2::element_text(
+          color =  grey(.20, 1),
+          face = "plain",
+          size = ggplot2::rel(.80),
+          hjust = 1
+        ),
+        # axes:
+        axis.line =  ggplot2::element_line(color = "black", size = ggplot2::rel(1)),
+        axis.ticks = ggplot2::element_line(color = "black", size = ggplot2::rel(.90)),
+        axis.title = ggplot2::element_text(color = grey(.10, 1)),
+        axis.text =  ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)),
+        # legend:
+        legend.title = ggplot2::element_text(color = grey(.10, 1)),
+        legend.text = ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)),
+        legend.background = ggplot2::element_blank(),
+        legend.key = ggplot2::element_blank(),
+        # strip:
+        # strip.background = ggplot2::element_rect(fill = pal_seeblau[[1]], color = pal_seeblau[[5]], size = ggplot2::rel(5/3)),
+        strip.background = ggplot2::element_rect(
+          fill = grey(.95, 1),
+          color = grey(.05, 1),
+          # light grey strip background
+          size = ggplot2::rel(.90)
+        ),
+        strip.text = ggplot2::element_text(
+          color = grey(0, 1),
+          size = ggplot2::rel(1.0),
+          margin = ggplot2::margin(
+            t = 4,
+            r = 4,
+            b = 4,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        # panel:
+        # panel.border = ggplot2::element_blank(),
+        panel.border = ggplot2::element_rect(
+          fill = "transparent",
+          color = grey(.05, 1),
+          linetype = "solid",
+          size = ggplot2::rel(.80)
+        ),
+        # panel.grid = ggplot2::element_blank(),
+        panel.grid.major = ggplot2::element_line(
+          color = grey(.75, 1),
+          linetype = "solid",
+          size = ggplot2::rel(.50)
+        ),
+        # panel.grid.minor = ggplot2::element_line(color = grey(.75, 1), linetype = "solid", size = ggplot2::rel(.40)), # "dotted"
+        panel.grid.minor = ggplot2::element_blank(),
+        panel.background = ggplot2::element_rect(fill = grey(1, 1), color = NA),
+        # "white" panel background
+        # background:
+        plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
+        complete = TRUE
+      ),scale_color_manual(values = usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
+  )
+}
+
+###################################################################################################
+
+# theme_tueb_1_cont: Continous version for plotting: ------
+
+# - Documentation: ----
+
+#' Primary theme for University of Tuebingen colours (for ggplot2)
+#'
+#' \code{theme_tueb_1_disc} provides a basic \bold{colorCodes} theme
+#' to use in \bold{ggplot2} commands.
+#'
+#' The theme is lightweight and no-nonsense, but somewhat
+#' opinionated (e.g., in using mostly grey scales to
+#' allow emphasizing data points with color accents).
+#'
+#' @param col_title Color of title (text) elements (optional, numeric).
+#' Default: \code{col_title = uni_tuebingen_1[[1]]}.
+#'
+#' @param base_size Base font size (optional, numeric).
+#' Default: \code{base_size = 11}.
+#'
+#' @param base_family Base font family (optional, character).
+#' Default: \code{base_family = ""}.
+#' Options include \code{"mono"}, \code{"sans"} (default), and "serif".
+#'
+#' @param base_line_size Base line size (optional, numeric).
+#' Default: \code{base_line_size = base_size/22}.
+#'
+#' @param base_rect_size Base rectangle size (optional, numeric).
+#' Default: \code{base_rect_size = base_size/22}.
+#'
+#' @family plot functions
+#'
+#' @seealso
+#' \code{\link{theme_tueb_1_cont}} for an alternative theme.
+#'
+#' @import ggplot2
+#'
+#' @export
+
+# - Definition: ----
+
+theme_tueb_1_cont <- function(col_title = uni_tuebingen_1[[3]],
+                              base_size = 11,
+                              base_family = "",
+                              base_line_size = base_size / 22,
+                              base_rect_size = base_size / 22) {
+  list(
+    ggplot2::theme_bw(
+      base_size = base_size,
+      base_family = base_family,
+      base_line_size = base_line_size,
+      base_rect_size = base_rect_size
+    ) %+replace%
+      ggplot2::theme(
+        title = ggplot2::element_text(
+          color = col_title,
+          face = "bold",
+          margin = ggplot2::margin(
+            t = 10,
+            r = 4,
+            b = 4,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        plot.subtitle = ggplot2::element_text(
+          color = grey(.10, 1),
+          face = "plain",
+          hjust = 0,
+          margin = ggplot2::margin(
+            t = 2,
+            r = 4,
+            b = 8,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        plot.caption = ggplot2::element_text(
+          color =  grey(.20, 1),
+          face = "plain",
+          size = ggplot2::rel(.80),
+          hjust = 1
+        ),
+        # axes:
+        axis.line =  ggplot2::element_line(color = "black", size = ggplot2::rel(1)),
+        axis.ticks = ggplot2::element_line(color = "black", size = ggplot2::rel(.90)),
+        axis.title = ggplot2::element_text(color = grey(.10, 1)),
+        axis.text =  ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)),
+        # legend:
+        legend.title = ggplot2::element_text(color = grey(.10, 1)),
+        legend.text = ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)),
+        legend.background = ggplot2::element_blank(),
+        legend.key = ggplot2::element_blank(),
+        # strip:
+        # strip.background = ggplot2::element_rect(fill = pal_seeblau[[1]], color = pal_seeblau[[5]], size = ggplot2::rel(5/3)),
+        strip.background = ggplot2::element_rect(
+          fill = grey(.95, 1),
+          color = grey(.05, 1),
+          # light grey strip background
+          size = ggplot2::rel(.90)
+        ),
+        strip.text = ggplot2::element_text(
+          color = grey(0, 1),
+          size = ggplot2::rel(1.0),
+          margin = ggplot2::margin(
+            t = 4,
+            r = 4,
+            b = 4,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        # panel:
+        # panel.border = ggplot2::element_blank(),
+        panel.border = ggplot2::element_rect(
+          fill = "transparent",
+          color = grey(.05, 1),
+          linetype = "solid",
+          size = ggplot2::rel(.80)
+        ),
+        # panel.grid = ggplot2::element_blank(),
+        panel.grid.major = ggplot2::element_line(
+          color = grey(.75, 1),
+          linetype = "solid",
+          size = ggplot2::rel(.50)
+        ),
+        # panel.grid.minor = ggplot2::element_line(color = grey(.75, 1), linetype = "solid", size = ggplot2::rel(.40)), # "dotted"
+        panel.grid.minor = ggplot2::element_blank(),
+        panel.background = ggplot2::element_rect(fill = grey(1, 1), color = NA),
+        # "white" panel background
+        # background:
+        plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
+        complete = TRUE
+      ), scale_color_gradientn(colors =usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3])))
+  )
+}
+
+
+###################################################################################################
+
+# theme_tueb_2_disc: Discrete version for plotting for the second palette: ------
+
+# - Documentation: ----
+
+#' Primary theme for University of Tuebingen colours (for ggplot2)
+#'
+#' \code{theme_tueb_2_disc} provides a basic \bold{colorCodes} theme
+#' to use in \bold{ggplot2} commands.
+#'
+#' The theme is lightweight and no-nonsense, but somewhat
+#' opinionated (e.g., in using mostly grey scales to
+#' allow emphasizing data points with color accents).
+#'
+#' @param col_title Color of title (text) elements (optional, numeric).
+#' Default: \code{col_title = uni_tuebingen_1[[1]]}.
+#'
+#' @param base_size Base font size (optional, numeric).
+#' Default: \code{base_size = 11}.
+#'
+#' @param base_family Base font family (optional, character).
+#' Default: \code{base_family = ""}.
+#' Options include \code{"mono"}, \code{"sans"} (default), and "serif".
+#'
+#' @param base_line_size Base line size (optional, numeric).
+#' Default: \code{base_line_size = base_size/22}.
+#'
+#' @param base_rect_size Base rectangle size (optional, numeric).
+#' Default: \code{base_rect_size = base_size/22}.
+#'
+#' @examples
+#'
+#' \donttest{
+#'   # Plotting iris dataset (using ggplot2, theme_tueb_1, and unikn colors):
+#'
+#'   library('ggplot2')  # theme_tueb_1 requires ggplot2
+#'
+#'   ggplot(datasets::iris) +
+#'     geom_jitter(aes(x = Petal.Length, y = Petal.Width, color = Species), size = 3, alpha = 2/3) +
+#'     scale_color_manual(values = usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3]))) +
+#'     labs(tag = "A", title = "Iris petals",
+#'          caption = "Data from datasets::iris") +
+#'     theme_tueb_2_disc()
+#' }
+#'
+#' @family plot functions
+#'
+#' @seealso
+#' \code{\link{theme_tueb_1_cont}} for an alternative theme.
+#'
+#' @import ggplot2
+#'
+#' @export
+
+# - Definition: ----
+
+theme_tueb_2_disc <- function(col_title = uni_tuebingen_1[[3]],
+                              base_size = 11,
+                              base_family = "",
+                              base_line_size = base_size / 22,
+                              base_rect_size = base_size / 22) {
+  list(
+    ggplot2::theme_bw(
+      base_size = base_size,
+      base_family = base_family,
+      base_line_size = base_line_size,
+      base_rect_size = base_rect_size
+    ) %+replace%
+      ggplot2::theme(
+        title = ggplot2::element_text(
+          color = col_title,
+          face = "bold",
+          margin = ggplot2::margin(
+            t = 10,
+            r = 4,
+            b = 4,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        plot.subtitle = ggplot2::element_text(
+          color = grey(.10, 1),
+          face = "plain",
+          hjust = 0,
+          margin = ggplot2::margin(
+            t = 2,
+            r = 4,
+            b = 8,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        plot.caption = ggplot2::element_text(
+          color =  grey(.20, 1),
+          face = "plain",
+          size = ggplot2::rel(.80),
+          hjust = 1
+        ),
+        # axes:
+        axis.line =  ggplot2::element_line(color = "black", size = ggplot2::rel(1)),
+        axis.ticks = ggplot2::element_line(color = "black", size = ggplot2::rel(.90)),
+        axis.title = ggplot2::element_text(color = grey(.10, 1)),
+        axis.text =  ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)),
+        # legend:
+        legend.title = ggplot2::element_text(color = grey(.10, 1)),
+        legend.text = ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)),
+        legend.background = ggplot2::element_blank(),
+        legend.key = ggplot2::element_blank(),
+        # strip:
+        # strip.background = ggplot2::element_rect(fill = pal_seeblau[[1]], color = pal_seeblau[[5]], size = ggplot2::rel(5/3)),
+        strip.background = ggplot2::element_rect(
+          fill = grey(.95, 1),
+          color = grey(.05, 1),
+          # light grey strip background
+          size = ggplot2::rel(.90)
+        ),
+        strip.text = ggplot2::element_text(
+          color = grey(0, 1),
+          size = ggplot2::rel(1.0),
+          margin = ggplot2::margin(
+            t = 4,
+            r = 4,
+            b = 4,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        # panel:
+        # panel.border = ggplot2::element_blank(),
+        panel.border = ggplot2::element_rect(
+          fill = "transparent",
+          color = grey(.05, 1),
+          linetype = "solid",
+          size = ggplot2::rel(.80)
+        ),
+        # panel.grid = ggplot2::element_blank(),
+        panel.grid.major = ggplot2::element_line(
+          color = grey(.75, 1),
+          linetype = "solid",
+          size = ggplot2::rel(.50)
+        ),
+        # panel.grid.minor = ggplot2::element_line(color = grey(.75, 1), linetype = "solid", size = ggplot2::rel(.40)), # "dotted"
+        panel.grid.minor = ggplot2::element_blank(),
+        panel.background = ggplot2::element_rect(fill = grey(1, 1), color = NA),
+        # "white" panel background
+        # background:
+        plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
+        complete = TRUE
+      ), scale_fill_manual(values = usecol(
+            c(
+              uni_tuebingen_2[1],
+              uni_tuebingen_2[2],
+              uni_tuebingen_2[3],
+              uni_tuebingen_2[4],
+              uni_tuebingen_2[5],
+              uni_tuebingen_2[6],
+              uni_tuebingen_2[7],
+              uni_tuebingen_2[8],
+              uni_tuebingen_2[9],
+              uni_tuebingen_2[10],
+              uni_tuebingen_2[11],
+              uni_tuebingen_2[12]
+            )
+          ))
+  )
+}
+
+
+
+
+###################################################################################################
+
+# theme_tueb_2_cont: Continuous version for plotting for the second palette: ------
+
+# - Documentation: ----
+
+#' Primary theme for University of Tuebingen colours (for ggplot2)
+#'
+#' \code{theme_tueb_2_cont} provides a basic \bold{colorCodes} theme
+#' to use in \bold{ggplot2} commands.
+#'
+#' The theme is lightweight and no-nonsense, but somewhat
+#' opinionated (e.g., in using mostly grey scales to
+#' allow emphasizing data points with color accents).
+#'
+#' @param col_title Color of title (text) elements (optional, numeric).
+#' Default: \code{col_title = uni_tuebingen_1[[1]]}.
+#'
+#' @param base_size Base font size (optional, numeric).
+#' Default: \code{base_size = 11}.
+#'
+#' @param base_family Base font family (optional, character).
+#' Default: \code{base_family = ""}.
+#' Options include \code{"mono"}, \code{"sans"} (default), and "serif".
+#'
+#' @param base_line_size Base line size (optional, numeric).
+#' Default: \code{base_line_size = base_size/22}.
+#'
+#' @param base_rect_size Base rectangle size (optional, numeric).
+#' Default: \code{base_rect_size = base_size/22}.
+#'
+#' @family plot functions
+#'
+#' @seealso
+#' \code{\link{theme_tueb_2_disc}} for an alternative theme.
+#'
+#' @import ggplot2
+#'
+#' @export
+
+# - Definition: ----
+
+theme_tueb_2_cont <- function(col_title = uni_tuebingen_1[[3]],
+                              base_size = 11,
+                              base_family = "",
+                              base_line_size = base_size / 22,
+                              base_rect_size = base_size / 22) {
+  list(
+    ggplot2::theme_bw(
+      base_size = base_size,
+      base_family = base_family,
+      base_line_size = base_line_size,
+      base_rect_size = base_rect_size
+    ) %+replace%
+      ggplot2::theme(
+        title = ggplot2::element_text(
+          color = col_title,
+          face = "bold",
+          margin = ggplot2::margin(
+            t = 10,
+            r = 4,
+            b = 4,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        plot.subtitle = ggplot2::element_text(
+          color = grey(.10, 1),
+          face = "plain",
+          hjust = 0,
+          margin = ggplot2::margin(
+            t = 2,
+            r = 4,
+            b = 8,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        plot.caption = ggplot2::element_text(
+          color =  grey(.20, 1),
+          face = "plain",
+          size = ggplot2::rel(.80),
+          hjust = 1
+        ),
+        # axes:
+        axis.line =  ggplot2::element_line(color = "black", size = ggplot2::rel(1)),
+        axis.ticks = ggplot2::element_line(color = "black", size = ggplot2::rel(.90)),
+        axis.title = ggplot2::element_text(color = grey(.10, 1)),
+        axis.text =  ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)),
+        # legend:
+        legend.title = ggplot2::element_text(color = grey(.10, 1)),
+        legend.text = ggplot2::element_text(color = grey(.20, 1), size = ggplot2::rel(.90)),
+        legend.background = ggplot2::element_blank(),
+        legend.key = ggplot2::element_blank(),
+        # strip:
+        # strip.background = ggplot2::element_rect(fill = pal_seeblau[[1]], color = pal_seeblau[[5]], size = ggplot2::rel(5/3)),
+        strip.background = ggplot2::element_rect(
+          fill = grey(.95, 1),
+          color = grey(.05, 1),
+          # light grey strip background
+          size = ggplot2::rel(.90)
+        ),
+        strip.text = ggplot2::element_text(
+          color = grey(0, 1),
+          size = ggplot2::rel(1.0),
+          margin = ggplot2::margin(
+            t = 4,
+            r = 4,
+            b = 4,
+            l = 4,
+            unit = "pt"
+          )
+        ),
+        # panel:
+        # panel.border = ggplot2::element_blank(),
+        panel.border = ggplot2::element_rect(
+          fill = "transparent",
+          color = grey(.05, 1),
+          linetype = "solid",
+          size = ggplot2::rel(.80)
+        ),
+        # panel.grid = ggplot2::element_blank(),
+        panel.grid.major = ggplot2::element_line(
+          color = grey(.75, 1),
+          linetype = "solid",
+          size = ggplot2::rel(.50)
+        ),
+        # panel.grid.minor = ggplot2::element_line(color = grey(.75, 1), linetype = "solid", size = ggplot2::rel(.40)), # "dotted"
+        panel.grid.minor = ggplot2::element_blank(),
+        panel.background = ggplot2::element_rect(fill = grey(1, 1), color = NA),
+        # "white" panel background
+        # background:
+        plot.background = ggplot2::element_rect(fill = "transparent", color = NA),
+        complete = TRUE
+      ), scale_colour_gradientn(colors = usecol(
+        c(
+          uni_tuebingen_2[1],
+          uni_tuebingen_2[2],
+          uni_tuebingen_2[3],
+          uni_tuebingen_2[4],
+          uni_tuebingen_2[5],
+          uni_tuebingen_2[6],
+          uni_tuebingen_2[7],
+          uni_tuebingen_2[8],
+          uni_tuebingen_2[9],
+          uni_tuebingen_2[10],
+          uni_tuebingen_2[11],
+          uni_tuebingen_2[12]
+        )
+      ))
+  )
+}
