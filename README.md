@@ -183,7 +183,11 @@ To make the usage of the two different palettes more appealing, I
 created two different themes called `theme_tueb_1` for the primary
 colors and `theme_tueb_2` for the secondary colors. The following plot
 gives an example of a plot created with the theme for the University of
-Tuebingen primary colors.
+Tuebingen primary colors. The tow themes can be applied to discrete and
+continuous data by choosing the right option in the brackets.
+
+Note: The themes only work if the number of objects to be colored
+matches the number of the University of Tuebingen colors.
 
 ``` r
 library('ggplot2')  
@@ -570,6 +574,6 @@ remain with their original creators:
 
 <!-- Footer: -->
 
-\[File `README.md` updated on 2023-03-09.\]
+\[File `README.md` updated on 2023-04-04.\]
 
 <!-- eof. -->
