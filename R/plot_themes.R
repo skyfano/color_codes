@@ -589,7 +589,7 @@ theme_tueb_1 <- function(binary = TRUE,
 
 # - Definition: ----
 
-theme_tueb_2 <- function(binary = TRUE,
+theme_tueb_2 <- function(binary = FALSE,
                          col_title = uni_tuebingen_2[[1]],
                          base_size = 11,
                          base_family = "",
@@ -764,7 +764,6 @@ theme_tueb_2 <- function(binary = TRUE,
 #'
 #'   ggplot(datasets::iris) +
 #'     geom_jitter(aes(x = Petal.Length, y = Petal.Width, color = Species), size = 3, alpha = 2/3) +
-#'     scale_color_manual(values = usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3]))) +
 #'     labs(tag = "A", title = "Iris petals",
 #'          caption = "Data from datasets::iris") +
 #'     theme_tueb_1_disc()
@@ -911,6 +910,38 @@ theme_tueb_1_disc <- function(col_title = uni_tuebingen_1[[3]],
 #' @param base_rect_size Base rectangle size (optional, numeric).
 #' Default: \code{base_rect_size = base_size/22}.
 #'
+#' @examples
+#'
+#' \donttest{
+#'   # Plotting iris dataset (using ggplot2, theme_tueb_1, and unikn colors):
+#'
+#'   library('ggplot2')  # theme_tueb_1 requires ggplot2
+#'
+#'     n <- 3
+#'     groups <- 1:n
+#'     df <- data.frame()
+#'     set.seed(3)
+#'
+#'     for (i in seq(1:30)){
+#'         data = data.frame(matrix(0, n, 3))
+#'         data[, 1] <- i
+#'         data[, 2] <- sample(groups, nrow(data))
+#'         data[, 3] <- prop.table(sample(c(rep(0, 100), c(1:n)), nrow(data)))
+#'         df = rbind(df, data)}
+#'
+#'     names(df) <- c("X","Group","Y")
+#'     df$Group <- as.factor(df$Group)
+#'
+#'     df <- df[c(2, 1, 3)]
+#'     df <- df[order(df$X, df$Group) , ]
+#'     rownames(df) <- NULL
+#'     my_data <- df
+#'
+#'     ggplot(my_data, aes(x = X, y = Y, fill = Group)) +
+#'         geom_area() +
+#'         theme_tueb_1_cont() +
+#'         theme(legend.position = "none")
+#' }
 #' @family plot functions
 #'
 #' @seealso
@@ -1062,7 +1093,6 @@ theme_tueb_1_cont <- function(col_title = uni_tuebingen_1[[3]],
 #'
 #'   ggplot(datasets::iris) +
 #'     geom_jitter(aes(x = Petal.Length, y = Petal.Width, color = Species), size = 3, alpha = 2/3) +
-#'     scale_color_manual(values = usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3]))) +
 #'     labs(tag = "A", title = "Iris petals",
 #'          caption = "Data from datasets::iris") +
 #'     theme_tueb_2_disc()
@@ -1225,6 +1255,38 @@ theme_tueb_2_disc <- function(col_title = uni_tuebingen_1[[3]],
 #' @param base_rect_size Base rectangle size (optional, numeric).
 #' Default: \code{base_rect_size = base_size/22}.
 #'
+#' @examples
+#'
+#' \donttest{
+#'   # Plotting iris dataset (using ggplot2, theme_tueb_1, and unikn colors):
+#'
+#'   library('ggplot2')  # theme_tueb_1 requires ggplot2
+#'
+#'     n <- 12
+#'     groups <- 1:n
+#'     df <- data.frame()
+#'     set.seed(3)
+#'
+#'     for (i in seq(1:30)){
+#'         data = data.frame(matrix(0, n, 3))
+#'         data[, 1] <- i
+#'         data[, 2] <- sample(groups, nrow(data))
+#'         data[, 3] <- prop.table(sample(c(rep(0, 100), c(1:n)), nrow(data)))
+#'         df = rbind(df, data)}
+#'
+#'     names(df) <- c("X","Group","Y")
+#'     df$Group <- as.factor(df$Group)
+#'
+#'     df <- df[c(2, 1, 3)]
+#'     df <- df[order(df$X, df$Group) , ]
+#'     rownames(df) <- NULL
+#'     my_data <- df
+#'
+#'     ggplot(my_data, aes(x = X, y = Y, fill = Group)) +
+#'         geom_area() +
+#'         theme_tueb_2_cont() +
+#'         theme(legend.position = "none")
+#' }
 #' @family plot functions
 #'
 #' @seealso

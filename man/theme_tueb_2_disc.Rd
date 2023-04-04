@@ -47,7 +47,6 @@ allow emphasizing data points with color accents).
 
   ggplot(datasets::iris) +
     geom_jitter(aes(x = Petal.Length, y = Petal.Width, color = Species), size = 3, alpha = 2/3) +
-    scale_color_manual(values = usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3]))) +
     labs(tag = "A", title = "Iris petals",
          caption = "Data from datasets::iris") +
     theme_tueb_2_disc()

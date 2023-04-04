@@ -5,7 +5,7 @@
 \title{Alternative theme (for ggplot2)}
 \usage{
 theme_tueb_2(
-  binary = TRUE,
+  binary = FALSE,
   col_title = uni_tuebingen_2[[1]],
   base_size = 11,
   base_family = "",
