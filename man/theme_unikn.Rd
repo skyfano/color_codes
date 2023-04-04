@@ -62,11 +62,7 @@ allow emphasizing data points with color accents).
 Other plot functions: 
 \code{\link{slide}()},
 \code{\link{theme_grau}()},
-\code{\link{theme_tueb_1_cont}()},
-\code{\link{theme_tueb_1_disc}()},
 \code{\link{theme_tueb_1}()},
-\code{\link{theme_tueb_2_cont}()},
-\code{\link{theme_tueb_2_disc}()},
 \code{\link{theme_tueb_2}()},
 \code{\link{xbox}()}
 }
