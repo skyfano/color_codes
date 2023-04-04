@@ -394,7 +394,7 @@ theme_grau <- function(col_title = grey(0, 1),
 #'     scale_color_manual(values = usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3]))) +
 #'     labs(tag = "A", title = "Iris petals",
 #'          caption = "Data from datasets::iris") +
-#'     theme_tueb_1()
+#'     theme_tueb_1(discrete= TRUE)
 #' }
 #'
 #' @family plot functions
@@ -581,7 +581,7 @@ theme_tueb_1 <- function(discrete = TRUE,
 #'
 #'     ggplot(my_data, aes(x = X, y = Y, fill = Group)) +
 #'         geom_area() +
-#'         theme_tueb_2() +
+#'         theme_tueb_2(discrete= TRUE) +
 #'         theme(legend.position = "none")
 #' }
 #'
