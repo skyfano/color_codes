@@ -358,13 +358,6 @@ theme_grau <- function(col_title = grey(0, 1),
 #' \code{theme_tueb_1} provides a basic \bold{colorCodes} theme
 #' to use in \bold{ggplot2} commands.
 #'
-<<<<<<< HEAD
-=======
-#' The theme is lightweight and no-nonsense, but somewhat
-#' opinionated (e.g., in using mostly grey scales to
-#' allow emphasizing data points with color accents).
->>>>>>> 4bf928d453361ecbeb17638f32e87fbf05ee27d7
-#' 
 #' @param discrete A boolean.
 #'   * `TRUE` (the default): discrete case.
 #'   * `FALSE`: continuous case.
