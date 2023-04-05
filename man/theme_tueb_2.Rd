@@ -74,7 +74,7 @@ but is of limited use with transparent colors.
 
     ggplot(my_data, aes(x = X, y = Y, fill = Group)) +
         geom_area() +
-        theme_tueb_2() +
+        theme_tueb_2(discrete = TRUE) +
         theme(legend.position = "none")
 }
 

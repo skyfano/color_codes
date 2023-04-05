@@ -38,11 +38,6 @@ Default: \code{base_rect_size = base_size/22}.}
 \code{theme_tueb_1} provides a basic \bold{colorCodes} theme
 to use in \bold{ggplot2} commands.
 }
-\details{
-The theme is lightweight and no-nonsense, but somewhat
-opinionated (e.g., in using mostly grey scales to
-allow emphasizing data points with color accents).
-}
 \examples{
 
 \donttest{
@@ -55,7 +50,7 @@ allow emphasizing data points with color accents).
     scale_color_manual(values = usecol(c(uni_tuebingen_1[1], uni_tuebingen_1[2], uni_tuebingen_1[3]))) +
     labs(tag = "A", title = "Iris petals",
          caption = "Data from datasets::iris") +
-    theme_tueb_1()
+    theme_tueb_1(discrete= TRUE)
 }
 
 }
