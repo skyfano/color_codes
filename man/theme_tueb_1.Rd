@@ -5,7 +5,7 @@
 \title{Primary theme for University of Tuebingen colours (for ggplot2)}
 \usage{
 theme_tueb_1(
-  binary = TRUE,
+  discrete = TRUE,
   col_title = uni_tuebingen_1[[3]],
   base_size = 11,
   base_family = "",
@@ -14,6 +14,10 @@ theme_tueb_1(
 )
 }
 \arguments{
+\item{discrete}{A boolean.
+* `TRUE` (the default): discrete case.
+* `FALSE`: continuous case.}
+
 \item{col_title}{Color of title (text) elements (optional, numeric).
 Default: \code{col_title = uni_tuebingen_1[[1]]}.}
 
@@ -61,10 +65,6 @@ allow emphasizing data points with color accents).
 Other plot functions: 
 \code{\link{slide}()},
 \code{\link{theme_grau}()},
-\code{\link{theme_tueb_1_cont}()},
-\code{\link{theme_tueb_1_disc}()},
-\code{\link{theme_tueb_2_cont}()},
-\code{\link{theme_tueb_2_disc}()},
 \code{\link{theme_tueb_2}()},
 \code{\link{theme_unikn}()},
 \code{\link{xbox}()}

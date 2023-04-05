@@ -5,7 +5,7 @@
 \title{Alternative theme (for ggplot2)}
 \usage{
 theme_tueb_2(
-  binary = TRUE,
+  discrete = TRUE,
   col_title = uni_tuebingen_2[[1]],
   base_size = 11,
   base_family = "",
@@ -14,6 +14,10 @@ theme_tueb_2(
 )
 }
 \arguments{
+\item{discrete}{A boolean.
+* `TRUE` (the default): discrete case.
+* `FALSE`: continuous case.}
+
 \item{col_title}{Color of title (text) elements (optional, numeric).
 Default: \code{col_title = grey(0, 1)} (i.e., "black").}
 
@@ -81,11 +85,7 @@ but is of limited use with transparent colors.
 Other plot functions: 
 \code{\link{slide}()},
 \code{\link{theme_grau}()},
-\code{\link{theme_tueb_1_cont}()},
-\code{\link{theme_tueb_1_disc}()},
 \code{\link{theme_tueb_1}()},
-\code{\link{theme_tueb_2_cont}()},
-\code{\link{theme_tueb_2_disc}()},
 \code{\link{theme_unikn}()},
 \code{\link{xbox}()}
 }
