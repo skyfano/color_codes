@@ -40,10 +40,7 @@ to use in \bold{ggplot2} commands.
 }
 \details{
 \code{theme_tueb_2} is no-nonsense, but fills
-panel backgrounds in "grau" (specifically, pal_seeggrau[[1]]).
-
-This theme works well for dark colors and bright color accents,
-but is of limited use with transparent colors.
+panel backgrounds with the secondary colors of the university of Tuebingen.
 }
 \examples{
 
